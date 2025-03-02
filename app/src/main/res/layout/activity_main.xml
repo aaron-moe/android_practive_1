@@ -10,7 +10,7 @@
         android:layout_height="match_parent"
         android:layout_margin="16dp"
         android:background="@drawable/rounded_retangle"
-        tools:context=".MainActivity">
+        tools:context=".ui.main.MainActivity">
 
         <!-- More icon group -->
         <androidx.cardview.widget.CardView
@@ -70,8 +70,6 @@
                     android:textColor="@color/white"
                     android:textSize="15sp"
                     android:textStyle="bold"/>
-
-
             </androidx.cardview.widget.CardView>
 
 
@@ -82,7 +80,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/subTitleText"
-            android:text="Engaging in a detailed discussion regarding the project, including scope, object etc."
+            android:text="@string/_paragraphs"
             android:textColor="@color/black"
             android:layout_marginStart="@dimen/_marginStart"
             android:layout_marginEnd="8dp"
@@ -190,10 +188,11 @@
                         android:layout_height="25dp"
                         android:src="@drawable/clock_blank"/>
                     <TextView
+                        android:id="@+id/start_date_time"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Oct 8, 8:30 PM"
-                        android:textSize="16dp"/>
+                        android:text="@string/_start_time"
+                        android:textSize="@dimen/_16dp"/>
 
                 </LinearLayout>
 
@@ -221,10 +220,11 @@
                         android:layout_height="25dp"
                         android:src="@drawable/clock_blank"/>
                     <TextView
+                        android:id="@+id/end_date_time"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Oct 25, 10:00 PM"
-                        android:textSize="16dp"/>
+                        android:text="@string/_end_time"
+                        android:textSize="@dimen/_16dp"/>
 
                 </LinearLayout>
             </LinearLayout>
@@ -246,6 +246,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
+                android:layout_marginTop="16dp"
                 android:id="@+id/contentTitleGroup">
 
                 <TextView
@@ -279,150 +280,164 @@
 
             <!-- Task List -->
             <!--Task1 -->
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:background="@drawable/rounded_retangle_tasks"
-                android:id="@+id/task1group"
-                android:orientation="horizontal">
+<!--            <LinearLayout-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_gravity="center_vertical"-->
+<!--                android:background="@drawable/rounded_retangle_tasks"-->
+<!--                android:id="@+id/task1group"-->
+<!--                android:layout_marginTop="16dp"-->
+<!--                android:orientation="horizontal">-->
 
-                <ImageView
-                    android:layout_width="32dp"
-                    android:layout_height="32dp"
-                    android:layout_weight="1"
-                    android:src="@drawable/check_circle_black"/>
-                <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="9"
-                    android:orientation="vertical">
+<!--                <ImageView-->
+<!--                    android:layout_width="32dp"-->
+<!--                    android:layout_height="32dp"-->
+<!--                    android:layout_weight="1"-->
+<!--                    android:layout_marginTop="8dp"-->
+<!--                    android:src="@drawable/check_circle_black"/>-->
+<!--                <LinearLayout-->
+<!--                    android:layout_width="0dp"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_weight="9"-->
+<!--                    android:orientation="vertical">-->
 
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="Read and analyze the project brief"
-                        android:textColor="@color/black"
-                        android:textStyle="bold"/>
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="8dp"
-                        android:orientation="horizontal">
-                        <ImageView
-                            android:layout_width="24dp"
-                            android:layout_height="24dp"
-                            android:src="@drawable/clock_blank"/>
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="4dp"
-                            android:text="Oct 6, 8:30 PM"/>
-                    </LinearLayout>
-                    
-                </LinearLayout>
-            </LinearLayout>
+<!--                    <TextView-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:text="@string/_task1_text"-->
+<!--                        android:textColor="@color/black"-->
+<!--                        android:textStyle="bold"/>-->
+<!--                    <LinearLayout-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:layout_marginTop="8dp"-->
+<!--                        android:orientation="horizontal">-->
+<!--                        <ImageView-->
+<!--                            android:layout_width="24dp"-->
+<!--                            android:layout_height="24dp"-->
+<!--                            android:src="@drawable/clock_blank"/>-->
+<!--                        <TextView-->
+<!--                            android:layout_width="match_parent"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:layout_marginStart="4dp"-->
+<!--                            android:text="Oct 6, 8:30 PM"/>-->
+<!--                    </LinearLayout>-->
+
+<!--                </LinearLayout>-->
+<!--            </LinearLayout>-->
 
             <!--Task2 -->
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:background="@drawable/rounded_retangle_tasks"
-                android:id="@+id/task2group"
-                android:orientation="horizontal">
+<!--            <LinearLayout-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_gravity="center_vertical"-->
+<!--                android:layout_marginTop="16dp"-->
+<!--                android:background="@drawable/rounded_retangle_tasks"-->
+<!--                android:id="@+id/task2group"-->
+<!--                android:orientation="horizontal">-->
 
-                <ImageView
-                    android:layout_width="32dp"
-                    android:layout_height="32dp"
-                    android:layout_weight="1"
-                    android:src="@drawable/check_circle_black"/>
-                <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="9"
-                    android:orientation="vertical">
+<!--                <ImageView-->
+<!--                    android:layout_width="32dp"-->
+<!--                    android:layout_height="32dp"-->
+<!--                    android:layout_marginTop="8dp"-->
+<!--                    android:layout_weight="1"-->
+<!--                    android:src="@drawable/check_circle_black"/>-->
+<!--                <LinearLayout-->
+<!--                    android:layout_width="0dp"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_weight="9"-->
+<!--                    android:orientation="vertical">-->
 
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="Identify all related stake holder"
-                        android:textColor="@color/black"
-                        android:textStyle="bold"/>
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="8dp"
-                        android:orientation="horizontal">
-                        <ImageView
-                            android:layout_width="24dp"
-                            android:layout_height="24dp"
-                            android:src="@drawable/clock_blank"/>
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="4dp"
-                            android:text="Oct 8, 8:30 PM"/>
-                    </LinearLayout>
+<!--                    <TextView-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:text="@string/_task2_text"-->
+<!--                        android:textColor="@color/black"-->
+<!--                        android:textStyle="bold"/>-->
+<!--                    <LinearLayout-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:layout_marginTop="8dp"-->
+<!--                        android:orientation="horizontal">-->
+<!--                        <ImageView-->
+<!--                            android:layout_width="24dp"-->
+<!--                            android:layout_height="24dp"-->
+<!--                            android:src="@drawable/clock_blank"/>-->
+<!--                        <TextView-->
+<!--                            android:layout_width="match_parent"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:layout_marginStart="4dp"-->
+<!--                            android:text="Oct 8, 8:30 PM"/>-->
+<!--                    </LinearLayout>-->
 
-                </LinearLayout>
-            </LinearLayout>
+<!--                </LinearLayout>-->
+<!--            </LinearLayout>-->
 
             <!--Task3 -->
-            <LinearLayout
+<!--            <LinearLayout-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginTop="16dp"-->
+<!--                android:layout_gravity="center_vertical"-->
+<!--                android:background="@drawable/rounded_retangle_tasks"-->
+<!--                android:id="@+id/task3group"-->
+<!--                android:orientation="horizontal">-->
+
+<!--                <ImageView-->
+<!--                    android:layout_width="32dp"-->
+<!--                    android:layout_height="32dp"-->
+<!--                    android:layout_marginTop="8dp"-->
+<!--                    android:layout_weight="1"-->
+<!--                    android:src="@drawable/check_circle_black"/>-->
+<!--                <LinearLayout-->
+<!--                    android:layout_width="0dp"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_weight="9"-->
+<!--                    android:orientation="vertical">-->
+
+<!--                    <TextView-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:text="@string/_task3_text"-->
+<!--                        android:textColor="@color/black"-->
+<!--                        android:textStyle="bold"/>-->
+<!--                    <LinearLayout-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:layout_marginTop="8dp"-->
+<!--                        android:orientation="horizontal">-->
+<!--                        <ImageView-->
+<!--                            android:layout_width="24dp"-->
+<!--                            android:layout_height="24dp"-->
+<!--                            android:src="@drawable/clock_blank"/>-->
+<!--                        <TextView-->
+<!--                            android:layout_width="match_parent"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:layout_marginStart="4dp"-->
+<!--                            android:text="Oct 18, 8:30 PM"/>-->
+<!--                    </LinearLayout>-->
+
+<!--                </LinearLayout>-->
+<!--            </LinearLayout>-->
+
+            <!-- RecyclerView TaskList -->
+            <androidx.recyclerview.widget.RecyclerView
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:background="@drawable/rounded_retangle_tasks"
-                android:id="@+id/task3group"
-                android:orientation="horizontal">
+                android:layout_height="150dp"
+                android:id="@+id/task_recycler"
+                android:layout_marginTop="@dimen/_16dp"/>
 
-                <ImageView
-                    android:layout_width="32dp"
-                    android:layout_height="32dp"
-                    android:layout_weight="1"
-                    android:src="@drawable/check_circle_black"/>
-                <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="9"
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="Set Timeline and Milestones"
-                        android:textColor="@color/black"
-                        android:textStyle="bold"/>
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="8dp"
-                        android:orientation="horizontal">
-                        <ImageView
-                            android:layout_width="24dp"
-                            android:layout_height="24dp"
-                            android:src="@drawable/clock_blank"/>
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="4dp"
-                            android:text="Oct 18, 8:30 PM"/>
-                    </LinearLayout>
-
-                </LinearLayout>
-            </LinearLayout>
 
             <Button
+                android:id="@+id/btnEditTask"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="52dp"
                 android:layout_margin="32dp"
                 android:background="@drawable/rounded_retangle_tasks"
                 android:backgroundTint="@color/blue"
-                android:text="Edit Task"
-                android:textStyle="bold"
+                android:text="@string/_edit_task_btn"
                 android:textColor="@color/white"
-                android:id="@+id/btnEditTask"/>
+                android:textStyle="bold" />
 
         </LinearLayout>
 

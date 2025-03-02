@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">Android_Practice_1</string>
+    <string name="_edit_task_btn">Edit Task</string>
+    <string name="_task1_text">Read and analyze the project brief</string>
+    <string name="_task2_text">Identify all related stake holder</string>
+    <string name="_task3_text">Set Timeline and Milestones</string>
+    <string name="_paragraphs">Engaging in a detailed discussion regarding the project, including scope, object etc.</string>
+    <string name="_end_time">Select End Time</string>
+    <string name="_start_time">Select Start Time</string>
 </resources>

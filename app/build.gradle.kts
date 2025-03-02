@@ -41,6 +41,8 @@ android {
 
 dependencies {
 
+    implementation(libs.androidx.compose.material.core)
+    implementation(libs.androidx.runtime.saved.instance.state)
     val appcompat_version = "1.7.0"
 
     implementation(libs.androidx.core.ktx)
@@ -61,8 +63,23 @@ dependencies {
 
     implementation("androidx.appcompat:appcompat:$appcompat_version")
 
+    //ConstraintLyout
     implementation("androidx.constraintlayout:constraintlayout:2.2.0")
 
-    implementation("com.google.android.material:material:1.12.0")
+    //Material
+    implementation(libs.material)
+
+    //Recycler View
+    implementation(libs.androidx.recyclerview)
+
+    // Retrofit
+    implementation(libs.retrofit)
+    implementation(libs.converter.gson)
+
+    // Coroutines
+    implementation(libs.kotlinx.coroutines.android)
+
+    // Glide (for potential future image loading)
+    implementation(libs.glide)
 
 }

@@ -3,4 +3,5 @@
     <dimen name="_cornor_radious">16dp</dimen>
     <dimen name="_marginStart">16dp</dimen>
     <dimen name="_margin_top">16dp</dimen>
+    <dimen name="_16dp">16dp</dimen>
 </resources>
